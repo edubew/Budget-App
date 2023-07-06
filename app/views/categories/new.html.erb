@@ -1,0 +1,15 @@
+<%= form_with model:@category do |form|%>
+<h1 class="text-center mb-3">Add a new Category</h1>
+
+<div>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+</div>
+
+<div class="mb-3">
+  <%=form.label :icon %>
+  <%=form.url_field :icon %>
+</div>
+
+<%=form.submit "Save" %>
+<%end%>
