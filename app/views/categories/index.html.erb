@@ -1,22 +1,24 @@
-<h1>Categories</h1>
+<%= render 'shared/navbar', title: "Transactions", back_link: false %>
 
 <div class = "categories_container">
   <% @categories.each do |category| %>
     <div class =  "category">
-      <h2><%= category.name %></h2>
-      <%= image_tag "#{category.icon}.png", style: 'height:40px; width:auto;' %>  <%= category.name%>
-      <p>$<%= category.total_amount %></p>
+      <div class = "details_container">
+      <img src="<%= category.icon %>" alt="Category Icon" class="category-icon">
+        <h2><%= category.name %></h2>
+        <h4>$<%= category.total_amount %></h4>
+      </div>
       <p><%= "#{category.created_at.day} #{category.created_at.strftime("%b")} #{category.created_at.year}" %></p>
       <ul class = "category_actions">
-        <li><%= button_to "View Transaction", category_records_path(category) %></li>
+        <li><%= link_to "View Transaction", category_records_path(category), class: 'btn btn-primary button' %></li>
         <li><%= button_to "Remove", category_path(category), data: {
         confirm: "Are you sure you want to delete: #{category.name}?",
-      }, method: :delete %></li>
+      }, method: :delete, class: 'btn btn-primary button' %></li>
       </ul>
     </div>
   <% end %>
 </div>
 
-<div>
-  <%= link_to "Add New Category", new_category_path %>
+<div class="category_btn">
+  <%= link_to "Add New Category", new_category_path, class: 'btn btn-primary' %>
 </div>
