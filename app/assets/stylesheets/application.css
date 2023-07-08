@@ -58,8 +58,9 @@ a {
   margin: 1rem -1rem;
 }
 
-.category_btn {
-  text-align: center;
+.category_btn a {
+  display: block;
+  width: 100%;
   margin-top: 3rem;
 }
 
@@ -173,7 +174,6 @@ form {
   color: #fff;
 }
 
-
 /* Media Queries */
 @media only screen and (min-width: 768px) {
   .splash_screen {
@@ -193,6 +193,7 @@ form {
 
   .categories_container {
     flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .details_container {
@@ -214,6 +215,12 @@ form {
   .category_actions {
     flex-direction: column;
     margin: 1rem 0;
+  }
+
+  .transactions_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .button {
