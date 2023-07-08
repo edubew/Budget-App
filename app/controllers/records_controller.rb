@@ -10,12 +10,12 @@ class RecordsController < ApplicationController
     @category = Category.find(params[:category_id])
     @record = @category.records.build
   end
-  
+
   def create
     @category = Category.find(params[:category_id])
     @record = @category.records.build(record_params)
     @record.author = current_user
-  
+
     if @record.save
       redirect_to category_records_path(@category), notice: 'Transaction was successfully added :)'
     else
@@ -23,13 +23,12 @@ class RecordsController < ApplicationController
       render :new, alert: @errors
     end
   end
-  
-  
+
+
 
   private
 
   def record_params
     params.require(:record).permit(:name, :amount, :category_ids)
   end
-  
 end

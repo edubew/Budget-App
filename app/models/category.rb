@@ -1,11 +1,11 @@
 class Category < ApplicationRecord
-    self.table_name = 'categories'
-    has_and_belongs_to_many :records
+  self.table_name = 'categories'
+  has_and_belongs_to_many :records
 
-    validates :name, presence: true
-    validates :icon, presence: true
+  validates :name, presence: true
+  validates :icon, presence: true
 
-    def total_amount
-        records.sum(:amount)
-    end
+  def total_amount
+    records.sum(:amount)
+  end
 end
