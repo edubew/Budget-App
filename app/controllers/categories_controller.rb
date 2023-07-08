@@ -2,7 +2,10 @@ class CategoriesController < ApplicationController
     before_action :authenticate_user!, only: [:index]
 
     def index
-        @categories = Category.where(author_id: current_user.id)
+        @categories = Category.all
+    end
+
+    def show
     end
 
     def new
@@ -10,7 +13,7 @@ class CategoriesController < ApplicationController
     end
 
     def create
-        @category = current_user.categories.new(category_params)
+        @category = Category.new(category_params)
 
         if @category.save
             redirect_to categories_path, notice: 'Category was successfully created!!'
