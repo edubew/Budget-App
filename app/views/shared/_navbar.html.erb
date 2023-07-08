@@ -1,0 +1,62 @@
+<header class="main_header">
+    <% if back_link %>
+        <%= link_to content_tag(:i, "", class: "fas fa-arrow-left"), back_link, class: "btn btn-link icon-btn" %>
+    <% else %>
+        <button type="button" class="btn btn-link icon-btn" data-bs-toggle="offcanvas" data-bs-target="#sideMenu"><i class="fas fa-bars"></i></button>
+    <% end %>
+    <h1><%= title.upcase %></h1>
+    <% if user_signed_in? %>
+        <%= button_to content_tag(:i, "Logout", class: "fas fa-user"), destroy_user_session_path, method: :delete, class: "btn btn-link icon-btn text-end" %>
+    <% elsif controller_name != 'sessions' %>
+        <%= link_to content_tag(:i, "", class: "fas fa-arrow-right"), new_user_session_path, class: "btn btn-link icon-btn text-end" %>
+    <% else %>
+        <%= link_to content_tag(:i, "", class: "fas fa-user-plus"), new_user_registration_path, class: "btn btn-link icon-btn text-end" %>
+    <% end %>
+</header>
+
+<% if user_signed_in? %>
+<div class="offcanvas offcanvas-start sidebar" tabindex="-1" id="sideMenu" aria-labelledby="sideMenuLabel">
+  <div class="offcanvas-header">
+    <h2 class="brand">Budget Buddy</h2>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="profile_container">
+      <div class="user-icon">
+        <i class="fas fa-user"></i>
+      </div>
+      <p class="user-name"><%= current_user.name %></p>
+    </div>
+
+    <div class="side-actions">
+      <%= link_to edit_user_registration_path, class: "action_group" do %>
+        <div class="action-icon">
+          <i class="fas fa-address-book"></i>
+        </div>
+          <p>Account Settings</p>
+      <% end %>
+
+      <%= link_to new_category_path, class: "action_group" do %>
+        <div class="action-icon">
+          <i class="fas fa-folder-plus"></i>
+        </div>
+          <p>Create Category</p>
+      <% end %>
+
+      <%= link_to "", class: "action_group", target: "_blank" do %>
+        <div class="action-icon">
+          <i class="fas fa-file-code"></i>
+        </div>
+          <p>Create Transaction</p>
+      <% end %>
+
+      <%= link_to "https://github.com/edubew", class: "action_group", target: "_blank" do %>
+        <div class="action-icon">
+          <i class="fab fa-github"></i>
+        </div>
+          <p>Author Profile</p>
+      <% end %>
+    </div>
+  </div>
+</div>
+<% end %>
