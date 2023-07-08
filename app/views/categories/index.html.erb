@@ -13,7 +13,7 @@
         <li><%= link_to "View Transaction", category_records_path(category), class: 'btn btn-primary button' %></li>
         <li><%= button_to "Remove", category_path(category), data: {
         confirm: "Are you sure you want to delete: #{category.name}?",
-      }, method: :delete, class: 'btn btn-primary button' %></li>
+      }, method: :delete, class: 'btn btn-primary button', id: "remove_btn-#{category.id}" %></li>
       </ul>
     </div>
   <% end %>
