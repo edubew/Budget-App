@@ -13,12 +13,12 @@ RSpec.describe 'Categories', type: :system do
             click_button 'Log in'
         end
 
-        scenario 'An image of each category displayed on categories page' do
+        scenario 'A categories list is displayed on categories page' do
             expect(page).to have_content('Test Category1')
             expect(page).to have_content('Test Category2')
         end
 
-        scenario 'A categories list is displayed on categories page' do
+        scenario 'An image of each category displayed on categories page' do
             expect(page).to have_css('img[src="https://www.nicepng.com/png/detail/67-671448_test-image-png-testing-png.png"]')
             expect(page).to have_css('img[src="https://e7.pngegg.com/pngimages/575/704/png-clipart-computer-icons-test-scalable-graphics-test-score-angle-pencil.png"]')
         end
