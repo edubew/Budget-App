@@ -1,6 +1,6 @@
 # 📖 [Budget Buddy] <a name="about-project"></a>
 
-> Budgetism is a mobile web application where a user can manage their budget and spending. A User will have a list of transactions associated with a category, so that they can track how much money they spent and on what.
+> Budget Buddy is a mobile web application where a user can manage their budget and spending. A User will have a list of transactions associated with a category so that they can track how much money they spent and on what.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -9,7 +9,7 @@
 <details>
   <summary>BackEnd</summary>
   <ul>
-    <li><a href="https://railsguide.com/">Rails</a></li>
+    <li><a href="https://data-sync.onrender.com">Rails</a></li>
   </ul>
 </details>
 
@@ -159,10 +159,6 @@ If you like this project give as a star! ⭐️
 - **[How I can run this project?]**
 
   - [After cloning repository, run rails server.]
-
-- **[Can I add likes on post?]**
-
-  - [You can add likes and comments on a post.]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
