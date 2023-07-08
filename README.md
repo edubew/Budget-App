@@ -41,7 +41,7 @@
 
 ## 🚀 Live Version <a name="live-demo"></a>
 
-- [Budget Buddy](budgetism-production.up.railway.app)
+- [Budget Buddy](https://data-sync.onrender.com)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
