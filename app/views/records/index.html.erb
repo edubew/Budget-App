@@ -1,0 +1,28 @@
+<%= render 'shared/navbar', title: "#{@category.name}", back_link: categories_path %>
+<div class = "transaction_category">
+  <h2><%= @category.name %></h2>
+  <h2>$<%= @category.total_amount %></h2>
+</div>
+
+<div class = "transactions_container">
+  <% @records.each do |record| %>
+    <div class = "transaction_details">
+      <div class = "transaction">
+      <img src="https://png.pngtree.com/png-vector/20190130/ourlarge/pngtree-various-goods-and-cars-png-image_643136.jpg" />
+        <h2><%= record.name %></h2>
+        <h3>$<%= record.amount %></h3>
+      </div>
+      <p><%= "#{record.created_at.day} #{record.created_at.strftime("%b")} #{record.created_at.year}" %></p>
+    </div>
+  <% end %>
+
+  <% if @records.empty? %>
+    <div class="no_content">
+      <p>No transactions available yet!</p>
+    </div>
+  <% end %>
+</div>
+
+<div class="category_btn">
+    <%= link_to 'Add New Transaction', new_category_record_path(@category), class: 'btn btn-success' %>
+</div>

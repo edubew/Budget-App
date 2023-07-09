@@ -1,15 +1,230 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+body {
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.splash_screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Lobster', cursive;
+  margin-top: 55%;
+}
+
+.splash_screen h1 {
+  font-size: 3rem;
+}
+
+.registration_container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 35% 5% 0;
+}
+
+.categories_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.category {
+  background-color: #efefef;
+  border-radius: 0.4rem;
+  margin: 1rem 1rem 0;
+  box-shadow: 4px 4px 4px gray;
+  padding: 0.6rem;
+}
+
+.category p {
+  margin: 0 0.4rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: gray;
+}
+
+.category_actions {
+  display: flex;
+  gap: 0.8rem;
+  margin: 1rem -1rem;
+}
+
+.category_btn a {
+  display: block;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.details_container {
+  display: flex;
+  margin: 0.6rem;
+  align-items: center;
+}
+
+.details_container img {
+  height: 4rem;
+  aspect-ratio: 1/1;
+}
+
+.details_container h2 {
+  font-size: 1.4rem;
+  margin-left: 0.6rem;
+}
+
+.details_container h4 {
+  margin-left: auto;
+  font-size: 1.4rem;
+}
+
+form {
+  margin: 0 2rem;
+}
+
+.form_title {
+  font-family: 'Acme', sans-serif;
+  margin-top: 1rem;
+}
+
+.no_content {
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 4%;
+  text-align: center;
+  border: solid 2px black;
+  border-radius: 0.6rem;
+}
+
+.transaction_category {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: #f8fbf8;
+  box-shadow: 0 5px 5px -4px rgba(51, 50, 50, 0.75);
+}
+
+.transaction_details {
+  padding: 0.6rem;
+  margin: 1rem;
+  background-color: #efefef;
+  box-shadow: 4px 4px 4px gray;
+  border-radius: 0.4rem;
+}
+
+.transaction {
+  display: flex;
+  align-items: center;
+}
+
+.transactions_container img {
+  width: 4.4rem;
+  aspect-ratio: 1/1;
+}
+
+.transaction h2 {
+  font-size: 1.4rem;
+  margin-left: 0.6rem;
+}
+
+.transaction h3 {
+  margin-left: auto;
+}
+
+.main_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #3778c2;
+  color: #fff;
+  height: 70px;
+}
+
+.main_header h1 {
+  font-size: 1.3rem;
+}
+
+.icon-btn {
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.sidebar {
+  background-image: linear-gradient(to right, #0db4d8, #3778c2);
+}
+
+.sidebar h2 {
+  font-family: 'Acme', sans-serif;
+  color: #fff;
+}
+
+.profile_container,
+.action_group {
+  display: flex;
+  gap: 1.2rem;
+  font-size: 1rem;
+  color: #fff;
+}
+
+/* Media Queries */
+@media only screen and (min-width: 768px) {
+  .splash_screen {
+    margin-top: 20%;
+  }
+
+  .registration_container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 20%;
+  }
+
+  .registration_container a {
+    padding: 0.6rem 3rem;
+  }
+
+  .categories_container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .details_container {
+    flex-direction: column;
+  }
+
+  .details_container h2 {
+    margin: 0;
+  }
+
+  .details_container h4 {
+    margin: 0;
+  }
+
+  .details_container img {
+    height: 9rem;
+  }
+
+  .category_actions {
+    flex-direction: column;
+    margin: 1rem 0;
+  }
+
+  .transactions_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .button {
+    display: block;
+    margin-left: -2rem;
+  }
+}

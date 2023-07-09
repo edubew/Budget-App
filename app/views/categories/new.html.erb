@@ -1,0 +1,16 @@
+<%= render 'shared/navbar', back_link: categories_path, title: "New Category" %>
+<%= form_with model:@category do |form| %>
+<h1 class="text-center mb-3 form_title">Add a new Category</h1>
+
+<div class="mb-3">
+  <%= form.label :name, class: "form-label" %>
+  <%= form.text_field :name, class: "form-control" %>
+</div>
+
+<div class="mb-3">
+  <%=form.label :icon, class: "form-label" %>
+  <%=form.url_field :icon, class: "form-control" %>
+</div>
+
+<%=form.submit "Save", class: 'btn btn-primary' %>
+<%end%>

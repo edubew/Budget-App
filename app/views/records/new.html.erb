@@ -1,0 +1,21 @@
+<%= render 'shared/navbar', back_link: category_records_path(@category), title: "New Record" %>
+<%= form_with model: [@category, @record] do |form| %>
+  <h1 class="text-center mb-3 form_title">Add a new Transaction</h1>
+
+  <div class="mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :amount, class: "form-label" %>
+    <%= form.number_field :amount, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :category_ids, class: "form-label" %>
+    <%= form.collection_select :category_ids, Category.all, :id, :name, {}, class: "form-select" %>
+  </div>
+
+  <%= form.submit "Save", class: "btn btn-primary" %>
+<% end %>
