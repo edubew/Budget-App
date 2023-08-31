@@ -1,6 +1,6 @@
 # 📖 [Budget Buddy] <a name="about-project"></a>
 
-> Budget Buddy is a mobile web application where a user can manage their budget and spending. A User will have a list of transactions associated with a category so that they can track how much money they spent and on what.
+> Budget Buddy is a mobile web application where a user can manage their budget and spending. A User will have a list of transactions associated with a category so that they can track how much money they spent and on what they spent it.
 
 ## 🛠 Built With <a name="built-with"></a>
 
